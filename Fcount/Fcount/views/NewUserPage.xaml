@@ -16,7 +16,7 @@
             TextColor="Black"
             FontAttributes="Bold"/>
             <Entry
-            Text="{Binding User, Mode=TwoWay}"
+            Text="{Binding Username, Mode=TwoWay}"
             Placeholder="jperez28"/>
             
             <Label
@@ -25,7 +25,7 @@
             TextColor="Black"
             FontAttributes="Bold"/>
             <Entry
-            Text="{Binding User, Mode=TwoWay}"
+            Text="{Binding Name, Mode=TwoWay}"
             Placeholder="Jesús"/>
             
             <Label
@@ -34,7 +34,7 @@
             TextColor="Black"
             FontAttributes="Bold"/>
             <Entry
-            Text="{Binding User, Mode=TwoWay}"
+            Text="{Binding Lastname, Mode=TwoWay}"
             Placeholder="Pérez"/>
 
             <Label
@@ -43,13 +43,23 @@
             TextColor="Black"
             FontAttributes="Bold"/>
             <Entry
-            Text="{Binding User, Mode=TwoWay}"
+            Text="{Binding Pass, Mode=TwoWay}"
+            IsPassword="True"
+            Placeholder="*******"/>
+
+            <Label
+            Text="Confirmar contraseña"
+            FontSize="Large"
+            TextColor="Black"
+            FontAttributes="Bold"/>
+            <Entry
+            Text="{Binding Confpass, Mode=TwoWay}"
             IsPassword="True"
             Placeholder="*******"/>
 
             <Button
             Text="Crear usuario"
-            Command="{Binding LoginBtn}"/>
+            Command="{Binding createUserCommand}"/>
 
         </StackLayout>
     </ContentPage.Content>

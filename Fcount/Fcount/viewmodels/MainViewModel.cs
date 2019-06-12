@@ -16,13 +16,11 @@ namespace Fcount.viewmodels
         public BtnLoginCommand loginBtnCommand { get; set; }
         public CreateUserCommand createUserCommand{ get; set; }
         private string _username, _pass;
-        private MainPage mainPage;
 
-        public MainViewModel(MainPage mainPage)
+        public MainViewModel()
         {
             this.createUserCommand = new CreateUserCommand(this);
             this.loginBtnCommand = new BtnLoginCommand(this);
-            this.mainPage = mainPage;
         }
 
         public string Username
@@ -50,16 +48,13 @@ namespace Fcount.viewmodels
         public bool checkEntries()
         {
             if (string.IsNullOrEmpty(Username) & string.IsNullOrEmpty(Pass))
-            {
-                //this.mainPage.entryWrong("Los campos no pueden estar en blanco.");
                 return false;
-            }
             else
                 return true;
         }
 
 
-        public void Navigate()
+        public void startNewUserPage()
         {
             Application.Current.MainPage.Navigation.PushModalAsync(new NewUserPage());
         }
@@ -70,6 +65,11 @@ namespace Fcount.viewmodels
             {
                 Application.Current.MainPage.DisplayAlert("Error", "El usuario "+_username+" no existe.", "ok");
                 return;
+            }
+            else
+            {
+                if(user.password!=_pass)
+                    Application.Current.MainPage.DisplayAlert("Error", "Error de contraseña.", "ok");
             }
         }
     }

@@ -18,11 +18,7 @@ namespace Fcount
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new MainViewModel(this);
-        }
-        public void showMessage(string titulo, string message)
-        {
-            DisplayAlert("Error en los campos", message, "Ok");
+            BindingContext = new MainViewModel();
         }
 
     }

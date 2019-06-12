@@ -44,6 +44,7 @@ namespace Fcount.models
             {
                 conn.CreateTable<User>();
                 return conn.Insert(user);
+
             }
         }
         public static User Select(string username)

@@ -20,7 +20,7 @@ namespace Fcount.views
         }
         public async void closePage()
         {
-            await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
     }
 }

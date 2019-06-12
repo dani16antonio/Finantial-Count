@@ -22,7 +22,7 @@ namespace Fcount.viewmodels.utils.commands
 
         public void Execute(object parameter)
         {
-            this.mainViewModel.Navigate();
+            this.mainViewModel.startNewUserPage();
         }
     }
 }
