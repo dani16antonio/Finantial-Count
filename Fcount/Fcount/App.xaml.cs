@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fcount.models;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,17 +9,18 @@ namespace Fcount
     {
         public static string databaseLocation = string.Empty;
         public static string databaseName= "fcount";
+        public static User user = null;
 
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new LoginPage();
         }
         public App(string databaseLoc)
         {
             InitializeComponent();
-            MainPage = new MainPage();
+            MainPage = new LoginPage();
             databaseLocation = databaseLoc;
         }
 

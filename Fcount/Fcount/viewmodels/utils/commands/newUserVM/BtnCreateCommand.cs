@@ -5,10 +5,10 @@ using System.Windows.Input;
 
 namespace Fcount.viewmodels.utils.commands.newUserVM
 {
-    class BtnCreateUserCommand : ICommand
+    class BtnCreateCommand : ICommand
     {
         private NewUserViewModel newUserViewModel;
-        public BtnCreateUserCommand(NewUserViewModel newUserViewModel)
+        public BtnCreateCommand(NewUserViewModel newUserViewModel)
         {
             this.newUserViewModel = newUserViewModel;
         }

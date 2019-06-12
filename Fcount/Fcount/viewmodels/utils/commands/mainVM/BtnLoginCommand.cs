@@ -9,9 +9,9 @@ namespace Fcount.viewmodels.utils.commands
     {
         public event EventHandler CanExecuteChanged;
 
-        public MainViewModel mainViewModel { get; set; }
+        public LoginViewModel mainViewModel { get; set; }
 
-        public BtnLoginCommand(MainViewModel mainViewModel)
+        public BtnLoginCommand(LoginViewModel mainViewModel)
         {
             this.mainViewModel = mainViewModel;
         }

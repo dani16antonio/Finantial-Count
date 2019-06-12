@@ -1,59 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Fcount.MainPage">
-
-    <StackLayout
-        Margin="5,0,5,0"
-        VerticalOptions="Center">
-        <Label
-            x:Name="lbUser"
-            Text="Usuario"
-            FontSize="Large"
-            TextColor="Black"
-            FontAttributes="Bold"/>
-        <Entry
-            Text="{Binding Username, Mode=TwoWay}"
-            x:Name="user"
-            Placeholder="jperez28"/>
-        <Label
-            x:Name="lbPass"
-            Text="Contraseña"
-            FontSize="Large"
-            TextColor="Black"
-            FontAttributes="Bold"/>
-        <Entry
-            Text="{Binding Pass, Mode=TwoWay}"
-            x:Name="pass"
-            Placeholder="**********"
-            IsPassword="True"/>
-        <Button
-            Text="Iniciar"
-            Command="{Binding loginBtnCommand}"/>
-        <Label
-            HorizontalOptions="End">
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span
-                    Text="Crear cuenta"
-                        TextColor="Aquamarine">
-                        <Span.GestureRecognizers>
-                            <TapGestureRecognizer
-                                Command="{Binding createUserCommand}"/>
-                        </Span.GestureRecognizers>
-                    </Span>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-        <Label
-            Text="Recordar"/>
-        <Switch
-            x:Name="swRemenber"
-            HorizontalOptions="Start">
-        </Switch>
-    </StackLayout>
-
-</ContentPage>
+             x:Class="Fcount.views.MainPage">
+  <!--Pages can be added as references or inline-->
+  <ContentPage Title="Tab 1" />
+  <ContentPage Title="Tab 2" />
+  <ContentPage Title="Tab 3" />
+</TabbedPage>

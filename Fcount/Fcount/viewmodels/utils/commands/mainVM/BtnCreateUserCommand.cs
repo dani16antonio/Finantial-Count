@@ -5,12 +5,12 @@ using System.Windows.Input;
 
 namespace Fcount.viewmodels.utils.commands
 {
-    class CreateUserCommand : ICommand
+    class BtnCreateUserCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
-        public MainViewModel mainViewModel { get; set; }
+        public LoginViewModel mainViewModel { get; set; }
 
-        public CreateUserCommand(MainViewModel mainViewModel)
+        public BtnCreateUserCommand(LoginViewModel mainViewModel)
         {
             this.mainViewModel = mainViewModel;
         }

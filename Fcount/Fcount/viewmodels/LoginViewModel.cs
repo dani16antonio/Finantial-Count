@@ -11,15 +11,15 @@ using Xamarin.Forms;
 
 namespace Fcount.viewmodels
 {
-    class MainViewModel : ViewModelsBase
+    class LoginViewModel : ViewModelsBase
     {
         public BtnLoginCommand loginBtnCommand { get; set; }
-        public CreateUserCommand createUserCommand{ get; set; }
+        public BtnCreateUserCommand createUserCommand{ get; set; }
         private string _username, _pass;
 
-        public MainViewModel()
+        public LoginViewModel()
         {
-            this.createUserCommand = new CreateUserCommand(this);
+            this.createUserCommand = new BtnCreateUserCommand(this);
             this.loginBtnCommand = new BtnLoginCommand(this);
         }
 
@@ -71,6 +71,8 @@ namespace Fcount.viewmodels
                 if(user.password!=_pass)
                     Application.Current.MainPage.DisplayAlert("Error", "Error de contraseña.", "ok");
             }
+            App.user = user;
+
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Fcount.viewmodels
 {
     class NewUserViewModel : ViewModelsBase
     {
-        public BtnCreateUserCommand createUserCommand { get; set; }
+        public BtnCreateCommand createUserCommand { get; set; }
         private string _username, _pass, _name, _lastname, _confpass;
         private NewUserPage newUserPage;
 
@@ -73,7 +73,7 @@ namespace Fcount.viewmodels
         #endregion
         public NewUserViewModel(NewUserPage newUserPage)
         {
-            createUserCommand = new BtnCreateUserCommand(this);
+            createUserCommand = new BtnCreateCommand(this);
             this.newUserPage = newUserPage;
         }
 
