@@ -2,6 +2,7 @@
 using Fcount.viewmodels.utils;
 using Fcount.viewmodels.utils.commands;
 using Fcount.views;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,14 +12,20 @@ using Xamarin.Forms;
 
 namespace Fcount.viewmodels
 {
-    class LoginViewModel : ViewModelsBase
+    class LoginVM : ViewModelsBase
     {
+        INavigationService navigationService;
         public BtnLoginCommand loginBtnCommand { get; set; }
+        public string stRemenberIsToggled { get; set; }
         public BtnCreateUserCommand createUserCommand{ get; set; }
         private string _username, _pass;
 
-        public LoginViewModel()
+        public LoginVM(INavigationService navigationService)
         {
+            //todo:remove this:
+            //Username = "ddiaz";
+            //Pass = "ddiaz";
+            this.navigationService = navigationService;
             this.createUserCommand = new BtnCreateUserCommand(this);
             this.loginBtnCommand = new BtnLoginCommand(this);
         }
@@ -58,21 +65,29 @@ namespace Fcount.viewmodels
         {
             Application.Current.MainPage.Navigation.PushModalAsync(new NewUserPage());
         }
-        public void login()
+        public async void login()
         {
             User user = User.Select(_username);
             if (user == null)
             {
-                Application.Current.MainPage.DisplayAlert("Error", "El usuario "+_username+" no existe.", "ok");
+                await Application.Current.MainPage.DisplayAlert("Error", "El usuario "+_username+" no existe.", "ok");
                 return;
             }
             else
             {
-                if(user.password!=_pass)
-                    Application.Current.MainPage.DisplayAlert("Error", "Error de contraseña.", "ok");
+                if (user.password != _pass)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", "Error de contraseña.", "ok");
+                    return;
+                }
             }
             App.user = user;
 
+            //Application.Current.MainPage.Navigation.InsertPageBefore(new MainPage(),
+            //    Application.Current.MainPage.Navigation.NavigationStack.First());
+            //await Application.Current.MainPage.Navigation.PopModalAsync();
+            //await Application.Current.MainPage.Navigation.PushModalAsync(new NavigationPage(new MainAppPage()));
+            await navigationService.NavigateAsync("MainAppPage");
         }
     }
 }

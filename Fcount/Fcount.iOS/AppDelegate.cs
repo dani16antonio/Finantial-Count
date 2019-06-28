@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 
 using Foundation;
+using Prism;
+using Prism.Ioc;
 using UIKit;
 
 namespace Fcount.iOS
@@ -28,9 +30,16 @@ namespace Fcount.iOS
             string folderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),
                 "..","Library");
             string fullPath = Path.Combine(folderPath, dbName);
-            LoadApplication(new App(fullPath));
+            LoadApplication(new App(fullPath, new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);
+        }
+    }
+    public class iOSInitializer : IPlatformInitializer
+    {
+        public void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            
         }
     }
 }

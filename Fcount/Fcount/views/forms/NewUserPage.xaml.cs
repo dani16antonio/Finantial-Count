@@ -16,11 +16,7 @@ namespace Fcount.views
         public NewUserPage()
         {
             InitializeComponent();
-            BindingContext = new NewUserViewModel(this);
-        }
-        public async void closePage()
-        {
-            await Navigation.PopModalAsync();
+            
         }
     }
 }

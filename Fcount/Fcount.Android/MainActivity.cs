@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using System.IO;
+using Prism;
+using Prism.Ioc;
 
 namespace Fcount.Droid
 {
@@ -25,7 +27,7 @@ namespace Fcount.Droid
             string dbName = App.databaseName + ".sqlite";
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string fullPath = Path.Combine(folderPath, dbName);
-            LoadApplication(new App(fullPath));
+            LoadApplication(new App(fullPath, new AndroidInitializer()));
             //LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -33,6 +35,12 @@ namespace Fcount.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+        public class AndroidInitializer : IPlatformInitializer
+        {
+            public void RegisterTypes(IContainerRegistry containerRegistry)
+            {
+            }
         }
     }
 }

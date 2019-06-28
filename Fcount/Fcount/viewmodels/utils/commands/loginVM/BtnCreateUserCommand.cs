@@ -8,9 +8,9 @@ namespace Fcount.viewmodels.utils.commands
     class BtnCreateUserCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
-        public LoginViewModel mainViewModel { get; set; }
+        public LoginVM mainViewModel { get; set; }
 
-        public BtnCreateUserCommand(LoginViewModel mainViewModel)
+        public BtnCreateUserCommand(LoginVM mainViewModel)
         {
             this.mainViewModel = mainViewModel;
         }

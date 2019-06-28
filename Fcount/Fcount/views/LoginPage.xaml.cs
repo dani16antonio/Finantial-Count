@@ -18,7 +18,6 @@ namespace Fcount
         public LoginPage()
         {
             InitializeComponent();
-            BindingContext = new LoginViewModel();
         }
 
     }

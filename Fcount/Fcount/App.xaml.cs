@@ -1,42 +1,39 @@
 ﻿using Fcount.models;
+using Fcount.viewmodels;
+using Fcount.viewmodels.forms;
+using Fcount.views;
+using Fcount.views.forms;
+using Prism;
+using Prism.Ioc;
+using Prism.Unity;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Fcount
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
         public static string databaseLocation = string.Empty;
-        public static string databaseName= "fcount";
+        public static string databaseName = "fcount";
         public static User user = null;
-
-        public App()
+        public App(string databaseLoc, IPlatformInitializer initializer=null):base(initializer)
         {
-            InitializeComponent();
-
-            MainPage = new LoginPage();
-        }
-        public App(string databaseLoc)
-        {
-            InitializeComponent();
-            MainPage = new LoginPage();
             databaseLocation = databaseLoc;
         }
-
-        protected override void OnStart()
+        protected override void OnInitialized()
         {
-            // Handle when your app starts
+            InitializeComponent();
+            NavigationService.NavigateAsync("NavigationPage/LoginPage");
         }
-
-        protected override void OnSleep()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // Handle when your app sleeps
+            containerRegistry.RegisterForNavigation<NewCustomerPage, NewCustomerVM>();
+            containerRegistry.RegisterForNavigation<MainAppPage, MainAppPageVM>();
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<NewUserPage, NewUserVM>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginVM>();
         }
-
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
-        }
+        
     }
 }

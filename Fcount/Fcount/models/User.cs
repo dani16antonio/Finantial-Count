@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Fcount.models
 {
-    public class User : ViewModelsBase
+    public class User
     {
         [PrimaryKey, AutoIncrement]
         public int Id

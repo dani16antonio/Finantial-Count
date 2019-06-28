@@ -10,11 +10,10 @@ using Xamarin.Forms;
 
 namespace Fcount.viewmodels
 {
-    class NewUserViewModel : ViewModelsBase
+    class NewUserVM : ViewModelsBase
     {
         public BtnCreateCommand createUserCommand { get; set; }
         private string _username, _pass, _name, _lastname, _confpass;
-        private NewUserPage newUserPage;
 
         #region Properties
         public string Username
@@ -71,10 +70,9 @@ namespace Fcount.viewmodels
             }
         }
         #endregion
-        public NewUserViewModel(NewUserPage newUserPage)
+        public NewUserVM()
         {
             createUserCommand = new BtnCreateCommand(this);
-            this.newUserPage = newUserPage;
         }
 
         public async void create()

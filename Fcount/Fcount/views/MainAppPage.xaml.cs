@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fcount.viewmodels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,9 @@ using Xamarin.Forms.Xaml;
 namespace Fcount.views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : TabbedPage
+    public partial class MainAppPage : TabbedPage
     {
-        public MainPage()
+        public MainAppPage()
         {
             InitializeComponent();
         }

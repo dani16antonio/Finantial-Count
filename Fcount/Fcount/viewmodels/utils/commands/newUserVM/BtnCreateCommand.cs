@@ -7,8 +7,8 @@ namespace Fcount.viewmodels.utils.commands.newUserVM
 {
     class BtnCreateCommand : ICommand
     {
-        private NewUserViewModel newUserViewModel;
-        public BtnCreateCommand(NewUserViewModel newUserViewModel)
+        private NewUserVM newUserViewModel;
+        public BtnCreateCommand(NewUserVM newUserViewModel)
         {
             this.newUserViewModel = newUserViewModel;
         }
