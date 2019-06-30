@@ -18,9 +18,9 @@ namespace Fcount.viewmodels.utils.commands.mainVM
             return true;
         }
 
-        public void Execute(object parameter)
+        public async void Execute(object parameter)
         {
-            this.mainAppPageVM.createUser();
+            await mainAppPageVM.navigationService.NavigateAsync("NewCustomerPage");
         }
     }
 }

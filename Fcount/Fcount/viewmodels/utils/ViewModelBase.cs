@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Fcount.viewmodels.utils
 {
-    public class ViewModelsBase : INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged
     {
         public void RaisePropertyChanged([CallerMemberName] string propertyName = null)
         {

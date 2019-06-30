@@ -4,12 +4,64 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Fcount.views.forms.NewCustomerPage">
+             x:Class="Fcount.views.forms.NewCustomerPage"
+             Title="Cliente">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout
+        Margin="5,0,5,0"
+        VerticalOptions="Center">
+
+            <Label
+            Text="Nombre"
+            FontSize="Large"
+            TextColor="Black"
+            FontAttributes="Bold"/>
+            <Entry
+            Text="{Binding Name, Mode=TwoWay}"
+            Placeholder="Jesús"/>
+            
+            <Label
+            Text="Apellido"
+            FontSize="Large"
+            TextColor="Black"
+            FontAttributes="Bold"/>
+            <Entry
+            Text="{Binding Lastname, Mode=TwoWay}"
+            Placeholder="Pérez"/>
+            
+            <Label
+            Text="Cédula"
+            FontSize="Large"
+            TextColor="Black"
+            FontAttributes="Bold"/>
+            <Entry
+            Text="{Binding Document, Mode=TwoWay}"
+            Placeholder="8-8888-88888"
+                Keyboard="Default"/>
+
+            <Label
+            Text="Teléfono"
+            FontSize="Large"
+            TextColor="Black"
+            FontAttributes="Bold"/>
+            <Entry
+            Text="{Binding Phone, Mode=TwoWay}"
+            Placeholder="6666-6666"
+                Keyboard="Telephone"/>
+
+            <Label
+            Text="Correo electrónico"
+            FontSize="Large"
+            TextColor="Black"
+            FontAttributes="Bold"/>
+            <Entry
+            Text="{Binding Email, Mode=TwoWay}"
+            Placeholder="ejemplo@ejemplo.com"
+                Keyboard="Email"/>
+
+            <Button
+                Text="Aceptar"
+                Command="{Binding CreateCustomerCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

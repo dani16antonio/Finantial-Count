@@ -3,6 +3,7 @@ using Fcount.viewmodels.utils;
 using Fcount.viewmodels.utils.commands;
 using Fcount.viewmodels.utils.commands.newUserVM;
 using Fcount.views;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,10 +11,11 @@ using Xamarin.Forms;
 
 namespace Fcount.viewmodels
 {
-    class NewUserVM : ViewModelsBase
+    class NewUserVM : ViewModelBase
     {
         public BtnCreateCommand createUserCommand { get; set; }
         private string _username, _pass, _name, _lastname, _confpass;
+        public INavigationService navigationService;
 
         #region Properties
         public string Username
@@ -70,8 +72,9 @@ namespace Fcount.viewmodels
             }
         }
         #endregion
-        public NewUserVM()
+        public NewUserVM(INavigationService navigationService)
         {
+            this.navigationService = navigationService;
             createUserCommand = new BtnCreateCommand(this);
         }
 
@@ -93,7 +96,8 @@ namespace Fcount.viewmodels
                 if (User.Insert(user) == 1)
                 {
                     await Application.Current.MainPage.DisplayAlert("Éxito", "Se creó el usuario", "Ok");
-                    await Application.Current.MainPage.Navigation.PopModalAsync();
+                    await navigationService.GoBackAsync();
+                    //await Application.Current.MainPage.Navigation.PopModalAsync();
                 }
                 else
                     await Application.Current.MainPage.DisplayAlert("Fallo", "No se pudo crear el usuario", "Ok");

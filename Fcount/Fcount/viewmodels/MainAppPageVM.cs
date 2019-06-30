@@ -9,20 +9,15 @@ using Xamarin.Forms;
 
 namespace Fcount.viewmodels
 {
-    class MainAppPageVM: ViewModelsBase
+    class MainAppPageVM: ViewModelBase
     {
         public NewCustomerCommand QuoteCommand { get; set; }
-        private INavigationService navigationService;
+        public INavigationService navigationService;
 
         public MainAppPageVM(INavigationService navigationService)
         {
             QuoteCommand = new NewCustomerCommand(this);
             this.navigationService = navigationService;
-        }
-
-        public async void createUser()
-        {
-            await navigationService.NavigateAsync("NewCustomerPage");
         }
     }
 }

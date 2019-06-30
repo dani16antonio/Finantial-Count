@@ -10,11 +10,15 @@ using Xamarin.Forms.Xaml;
 namespace Fcount.views.mainTabbedPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class QuoteTabbedPage : ContentPage
+    public partial class CostumerTabbedPage : ContentPage
     {
-        public QuoteTabbedPage()
+        public CostumerTabbedPage()
         {
             InitializeComponent();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
         }
     }
 }

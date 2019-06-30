@@ -13,5 +13,5 @@
             Priority="0"
             Command="{Binding QuoteCommand}"/>
     </TabbedPage.ToolbarItems>
-    <local:QuoteTabbedPage Title="Cotizar"/>
+    <local:CostumerTabbedPage Title="Customer"/>
 </TabbedPage>

@@ -3,6 +3,7 @@ using Fcount.viewmodels.utils;
 using Fcount.viewmodels.utils.commands;
 using Fcount.views;
 using Prism.Navigation;
+using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,7 +13,7 @@ using Xamarin.Forms;
 
 namespace Fcount.viewmodels
 {
-    class LoginVM : ViewModelsBase
+    class LoginVM : ViewModelBase
     {
         INavigationService navigationService;
         public BtnLoginCommand loginBtnCommand { get; set; }
@@ -22,9 +23,6 @@ namespace Fcount.viewmodels
 
         public LoginVM(INavigationService navigationService)
         {
-            //todo:remove this:
-            //Username = "ddiaz";
-            //Pass = "ddiaz";
             this.navigationService = navigationService;
             this.createUserCommand = new BtnCreateUserCommand(this);
             this.loginBtnCommand = new BtnLoginCommand(this);

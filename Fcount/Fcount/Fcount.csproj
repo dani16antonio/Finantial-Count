@@ -21,6 +21,9 @@
     <Compile Update="views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="views\mainTabbedPages\CostumerTabbedPage.xaml.cs">
+      <DependentUpon>CostumerTabbedPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -30,7 +33,7 @@
     <EmbeddedResource Update="views\MainAppPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="views\mainTabbedPages\QuoteTabbedPage.xaml">
+    <EmbeddedResource Update="views\mainTabbedPages\CostumerTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

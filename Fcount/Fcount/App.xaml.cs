@@ -1,8 +1,10 @@
 ﻿using Fcount.models;
 using Fcount.viewmodels;
 using Fcount.viewmodels.forms;
+using Fcount.viewmodels.mainTabbedPages;
 using Fcount.views;
 using Fcount.views.forms;
+using Fcount.views.mainTabbedPages;
 using Prism;
 using Prism.Ioc;
 using Prism.Unity;
@@ -33,6 +35,7 @@ namespace Fcount
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<NewUserPage, NewUserVM>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginVM>();
+            containerRegistry.RegisterForNavigation<CostumerTabbedPage, CustomerTabbedVM>();
         }
         
     }
