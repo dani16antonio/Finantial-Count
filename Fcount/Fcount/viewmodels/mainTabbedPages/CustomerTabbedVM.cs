@@ -13,7 +13,7 @@ namespace Fcount.viewmodels.mainTabbedPages
     class CustomerTabbedVM:ViewModelBase, IPageLifecycleAware
     {
         /// <summary>
-        /// Clase View Model de la vista que muestra todos los clientes
+        /// Clase View Model de la vista que muestra una lista de todos los clientes
         /// </summary>
         public BtnCustomerCommand CustomerCommand { get; set; }
         public ObservableCollection<Customer> Customers { get; set; }

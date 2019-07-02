@@ -11,7 +11,7 @@
             Order="Secondary"
             Text="Agregar Cliente"
             Priority="0"
-            Command="{Binding QuoteCommand}"/>
+            Command="{Binding CustomerCommand}"/>
     </TabbedPage.ToolbarItems>
     <local:CostumerTabbedPage Title="Customer"/>
 </TabbedPage>

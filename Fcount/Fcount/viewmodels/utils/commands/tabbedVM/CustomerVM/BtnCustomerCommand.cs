@@ -29,7 +29,7 @@ namespace Fcount.viewmodels.utils.commands.tabbedVM.QuoteVM
                 var customer = (Customer)listView.SelectedItem;
                 var param = new NavigationParameters();
                 param.Add("customer", customer);
-                await customerTabbedVM.navigationService.NavigateAsync("NewCustomerPage", param);
+                await customerTabbedVM.navigationService.NavigateAsync("UpdDelCustomerPage", param);
             }
             catch (Exception)
             {

@@ -4,8 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Fcount.views.forms.NewCustomerPage"
-             Title="Cliente">
+             x:Class="Fcount.views.forms.UpdDelCustomerPage">
     <ContentPage.Content>
         <StackLayout
         Margin="5,0,5,0"
@@ -59,9 +58,12 @@
             Placeholder="ejemplo@ejemplo.com"
                 Keyboard="Email"/>
 
+                <Button
+                Text="Actualizar Cliente"
+                Command="{Binding upadateCustomerCommand}"/>
             <Button
-                Text="Crear Cliente"
-                Command="{Binding CreateCustomerCommand}"/>
-        </StackLayout>
+                Text="Borrar Cliente"
+                Command="{Binding deleteCustomerCommand}"/>
+            </StackLayout>
     </ContentPage.Content>
 </ContentPage>

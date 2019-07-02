@@ -11,12 +11,12 @@ namespace Fcount.viewmodels
 {
     class MainAppPageVM: ViewModelBase
     {
-        public NewCustomerCommand QuoteCommand { get; set; }
+        public NewCustomerCommand CustomerCommand { get; set; }
         public INavigationService navigationService;
 
         public MainAppPageVM(INavigationService navigationService)
         {
-            QuoteCommand = new NewCustomerCommand(this);
+            CustomerCommand = new NewCustomerCommand(this);
             this.navigationService = navigationService;
         }
     }

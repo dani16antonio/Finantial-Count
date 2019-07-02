@@ -36,6 +36,7 @@ namespace Fcount
             containerRegistry.RegisterForNavigation<NewUserPage, NewUserVM>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginVM>();
             containerRegistry.RegisterForNavigation<CostumerTabbedPage, CustomerTabbedVM>();
+            containerRegistry.RegisterForNavigation<UpdDelCustomerPage, UpdDelCustomerVM>();
         }
         
     }
