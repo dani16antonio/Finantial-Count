@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace Fcount.viewmodels.forms
 {
-    class NewCustomerVM : ViewModelBase, INavigatedAware
+    class NewCustomerVM : ViewModelBase
     {
         private string _name, _lastname, _document, _phone, _email;
         public int _id;
@@ -68,13 +68,11 @@ namespace Fcount.viewmodels.forms
         #endregion
         public BtnCreateCustomerCommand CreateCustomerCommand { get; set; }
         private INavigationService navigationService;
-        private bool isUpdate;
 
         public NewCustomerVM(INavigationService navigationService)
         {
             CreateCustomerCommand = new BtnCreateCustomerCommand(this);
             this.navigationService = navigationService;
-            isUpdate = false;
         }
 
         internal bool CheckProp()
@@ -85,64 +83,21 @@ namespace Fcount.viewmodels.forms
 
         internal async void CreateCostumer()
         {
-            int result;
-            string message = "";
-            if (isUpdate)
+            var customer = new Customer()
             {
-                result = Customer.Update(new Customer()
-                {
-                    Id=_id,
-                    Name = _name,
-                    Lastname = _lastname,
-                    Phone = _phone,
-                    Document = _document,
-                    Email = _email
-                });
-                message = "actualizado";
-            }
-            else
-            {
-                var customer = new Customer()
-                {
-                    Name = _name,
-                    Lastname = _lastname,
-                    Phone = _phone,
-                    Document = _document,
-                    Email = _email
-                };
-                message = "creado";
-                result = Customer.Insert(customer);
-            }
+                Name = _name,
+                Lastname = _lastname,
+                Phone = _phone,
+                Document = _document,
+                Email = _email
+            };
+            var result = Customer.Insert(customer);
             if (result < 1)
                 await Application.Current.MainPage.DisplayAlert("Error",
-                    "El cliente no pudo ser "+message+", vuelva a intetar por favor.",
+                    "El cliente no pudo ser creado, vuelva a intetar por favor.",
                     "Aceptar");
             else
                 await navigationService.GoBackAsync();
-        }
-
-        public void OnNavigatedFrom(INavigationParameters parameters)
-        {
-
-        }
-
-        public void OnNavigatedTo(INavigationParameters parameters)
-        {
-            try
-            {
-                var item = parameters["customer"] as Customer;
-                Name = item.Name;
-                Lastname= item.Lastname;
-                Document = item.Document;
-                Phone= item.Phone;
-                Email = item.Email;
-                _id = item.Id;
-                isUpdate = true;
-            }
-            catch (Exception)
-            {
-                return;
-            }
         }
     }
 }
