@@ -11,8 +11,8 @@ namespace Fcount.viewmodels.utils.commands.tabbedVM.QuoteVM
     class BtnCustomerCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
-        public CustomerTabbedVM customerTabbedVM;
-        public BtnCustomerCommand(CustomerTabbedVM customerTabbedVM)
+        public CustomersTabbedVM customerTabbedVM;
+        public BtnCustomerCommand(CustomersTabbedVM customerTabbedVM)
         {
             this.customerTabbedVM = customerTabbedVM;
         }

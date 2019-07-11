@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Fcount.views.mainTabbedPages.NewItemPage">
+    <ContentPage.Content>
+        <StackLayout
+            Margin="5,0,5,0"
+        VerticalOptions="Center">
+            <Label
+            Text="Descripción"
+            FontSize="Large"
+            TextColor="Black"
+            FontAttributes="Bold"/>
+            <Entry
+            Text="{Binding Description, Mode=TwoWay}"
+                Placeholder="Lápiz mecánico"/>
+
+            <Label
+            Text="Marca"
+            FontSize="Large"
+            TextColor="Black"
+            FontAttributes="Bold"/>
+            <Entry
+            Text="{Binding Brand, Mode=TwoWay}"
+                Placeholder="PaperMate"/>
+
+            <Label
+            Text="Precio"
+            FontSize="Large"
+            TextColor="Black"
+            FontAttributes="Bold"/>
+            <Entry
+            Text="{Binding Price, Mode=TwoWay}"
+            Keyboard="Numeric"
+                Placeholder="2.95"/>
+            <Button Text="Crear artículo"
+                    Command="{Binding CreateItem}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Fcount.views.forms.item.UpdDelItemPage">
+    <ContentPage.Content>
+        <StackLayout
+            Margin="5,0,5,0"
+        VerticalOptions="Center">
+            <Label
+            Text="Descripción"
+            FontSize="Large"
+            TextColor="Black"
+            FontAttributes="Bold"/>
+            <Entry
+            Text="{Binding Description, Mode=TwoWay}"/>
+
+            <Label
+            Text="Marca"
+            FontSize="Large"
+            TextColor="Black"
+            FontAttributes="Bold"/>
+            <Entry
+            Text="{Binding Brand, Mode=TwoWay}"/>
+
+            <Label
+            Text="Precio"
+            FontSize="Large"
+            TextColor="Black"
+            FontAttributes="Bold"/>
+            <Entry
+            Text="{Binding Price, Mode=TwoWay}"
+            Keyboard="Numeric"/>
+            <Button Text="Actualizar"
+                    Command="{Binding UpdateCommand}"/>
+            <Button Text="Borrar"
+                    Command="{Binding DeleteCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

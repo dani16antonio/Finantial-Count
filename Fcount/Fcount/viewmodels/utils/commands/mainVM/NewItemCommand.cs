@@ -5,23 +5,22 @@ using System.Windows.Input;
 
 namespace Fcount.viewmodels.utils.commands.mainVM
 {
-    class NewCustomerCommand : ICommand
+    class NewItemCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
-        private MainAppPageVM mainAppPageVM;
-        public NewCustomerCommand(MainAppPageVM mainAppPageVM)
+        private MainAppPageVM MainAppPage;
+        public NewItemCommand(MainAppPageVM MainAppPage)
         {
-            this.mainAppPageVM = mainAppPageVM;
+            this.MainAppPage=MainAppPage;
         }
         public bool CanExecute(object parameter)
         {
             return true;
         }
 
-        public async void Execute(object parameter)
+        public void Execute(object parameter)
         {
-            await mainAppPageVM.navigationService.NavigateAsync("NewCustomerPage");
+            this.MainAppPage.navigationService.NavigateAsync("NewItemPage");
         }
     }
 }
-  
