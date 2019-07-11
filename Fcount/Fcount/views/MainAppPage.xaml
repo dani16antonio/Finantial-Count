@@ -12,6 +12,12 @@
             Text="Agregar Cliente"
             Priority="0"
             Command="{Binding CustomerCommand}"/>
+        <ToolbarItem
+            Order="Secondary"
+            Text="Agregar Producto"
+            Priority="0"
+            Command="{Binding ItemCommand}"/>
     </TabbedPage.ToolbarItems>
-    <local:CostumerTabbedPage Title="Customer"/>
+    <local:CostumersTabbedPage Title="Cliente"/>
+    <local:ItemsTabbedPage Title="Productos"/>
 </TabbedPage>

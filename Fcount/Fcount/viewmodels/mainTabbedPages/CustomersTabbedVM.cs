@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Fcount.viewmodels.mainTabbedPages
 {
-    class CustomerTabbedVM:ViewModelBase, IPageLifecycleAware
+    class CustomersTabbedVM:ViewModelBase, IPageLifecycleAware
     {
         /// <summary>
         /// Clase View Model de la vista que muestra una lista de todos los clientes
@@ -18,7 +18,7 @@ namespace Fcount.viewmodels.mainTabbedPages
         public BtnCustomerCommand CustomerCommand { get; set; }
         public ObservableCollection<Customer> Customers { get; set; }
         public INavigationService navigationService;
-        public CustomerTabbedVM(INavigationService navigationService)
+        public CustomersTabbedVM(INavigationService navigationService)
         {
             Customers = new ObservableCollection<Customer>();
             this.CustomerCommand = new BtnCustomerCommand(this);

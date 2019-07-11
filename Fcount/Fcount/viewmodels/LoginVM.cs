@@ -59,9 +59,9 @@ namespace Fcount.viewmodels
         }
 
 
-        public void startNewUserPage()
+        public async void startNewUserPage()
         {
-            Application.Current.MainPage.Navigation.PushModalAsync(new NewUserPage());
+            await navigationService.NavigateAsync("NewUserPage");
         }
         public async void login()
         {
