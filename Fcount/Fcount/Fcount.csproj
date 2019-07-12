@@ -21,6 +21,9 @@
     <Compile Update="views\forms\item\NewItemPage.xaml.cs">
       <DependentUpon>NewItemPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="views\forms\provider\NewProviderPage.xaml.cs">
+      <DependentUpon>NewProviderPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -29,6 +32,9 @@
     </Compile>
     <Compile Update="views\mainTabbedPages\ItemsTabbedPage.xaml.cs">
       <DependentUpon>ItemsTabbedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="views\mainTabbedPages\ProvidersTabbedPage.xaml.cs">
+      <DependentUpon>ProvidersTabbedPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -42,6 +48,9 @@
     <EmbeddedResource Update="views\forms\item\UpdDelItemPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="views\forms\provider\UpdDelProviderPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="views\MainAppPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -52,6 +61,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="views\mainTabbedPages\ItemsTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\forms\provider\NewProviderPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\mainTabbedPages\ProvidersTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

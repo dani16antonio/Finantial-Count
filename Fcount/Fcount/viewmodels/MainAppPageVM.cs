@@ -13,12 +13,15 @@ namespace Fcount.viewmodels
     {
         public NewCustomerCommand CustomerCommand { get; set; }
         public NewItemCommand ItemCommand { get; set; }
+        public NewProviderCmd ProviderCommand { get; set; }
         public INavigationService navigationService;
+
 
         public MainAppPageVM(INavigationService navigationService)
         {
             CustomerCommand = new NewCustomerCommand(this);
             ItemCommand = new NewItemCommand(this);
+            ProviderCommand = new NewProviderCmd(this);
             this.navigationService = navigationService;
         }
     }

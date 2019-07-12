@@ -15,9 +15,16 @@
         <ToolbarItem
             Order="Secondary"
             Text="Agregar Producto"
-            Priority="0"
+            Priority="1"
             Command="{Binding ItemCommand}"/>
+
+        <ToolbarItem
+            Order="Secondary"
+            Text="Agregar Proveedor"
+            Priority="2"
+            Command="{Binding ProviderCommand}"/>
     </TabbedPage.ToolbarItems>
     <local:CostumersTabbedPage Title="Cliente"/>
-    <local:ItemsTabbedPage Title="Productos"/>
+    <local:ItemsTabbedPage Title="Producto"/>
+    <local:ProvidersTabbedPage Title="Proveedor"/>
 </TabbedPage>

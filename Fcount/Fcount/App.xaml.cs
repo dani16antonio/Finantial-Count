@@ -2,10 +2,12 @@
 using Fcount.viewmodels;
 using Fcount.viewmodels.forms;
 using Fcount.viewmodels.forms.item;
+using Fcount.viewmodels.forms.provider;
 using Fcount.viewmodels.mainTabbedPages;
 using Fcount.views;
 using Fcount.views.forms;
 using Fcount.views.forms.item;
+using Fcount.views.forms.provider;
 using Fcount.views.mainTabbedPages;
 using Prism;
 using Prism.Ioc;
@@ -42,6 +44,9 @@ namespace Fcount
             containerRegistry.RegisterForNavigation<NewItemPage, NewItemVM>();
             containerRegistry.RegisterForNavigation<ItemsTabbedPage, ItemsTabbedVM>();
             containerRegistry.RegisterForNavigation<UpdDelItemPage, UpdDelItemVM>();
+            containerRegistry.RegisterForNavigation<NewProviderPage, NewProviderVM>();
+            containerRegistry.RegisterForNavigation<ProvidersTabbedPage, ProvidersTabbedVM>();
+            containerRegistry.RegisterForNavigation<UpdDelProviderPage, UpdDelProviderVM>();
         }
         
     }
