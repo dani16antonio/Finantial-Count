@@ -25,21 +25,13 @@ namespace Fcount.viewmodels.mainTabbedPages
         public string Price {
             get
             {
-                return _price.ToString();
+                return _price;
             }
             set
             {
-                try
-                {
-                    _price = float.Parse(value);
-                    RaisePropertyChanged();
-                    this.CreateItem.RaiseCanExecuteChanged();
-                }
-                catch (Exception)
-                {
-                    RaisePropertyChanged();
-                    this.CreateItem.RaiseCanExecuteChanged();
-                }
+                _price = value;
+                RaisePropertyChanged();
+                this.CreateItem.RaiseCanExecuteChanged();
             }
         }
         public string Brand {
@@ -57,7 +49,7 @@ namespace Fcount.viewmodels.mainTabbedPages
         public BtnItemsTabbedCommand CreateItem { get; set; }
         #endregion
         private string _description, _brand;
-        private float _price;
+        private string _price;
 
         public INavigationService  navigationService { get; set; }
         public NewItemVM(INavigationService navigationService)
@@ -67,12 +59,21 @@ namespace Fcount.viewmodels.mainTabbedPages
         }
         internal async void ExecuteCreateBtn()
         {
-            int row = Item.Insert(
-                new Item() {
-                    Brand = _brand,
-                    Description = _description,
-                    Price = _price
-                });
+            Item item = new Item()
+            {
+                Brand = _brand,
+                Description = _description,
+                Price = 0F
+            };
+            try
+            {
+                item.Price = float.Parse(_price);
+            }catch(Exception e)
+            {
+                _price=string.Empty;
+                return;
+            }
+            int row = Item.Insert(item);
             if (row > 0)
                 await this.navigationService.GoBackAsync();
             else
@@ -82,7 +83,7 @@ namespace Fcount.viewmodels.mainTabbedPages
 
         internal bool CheckProperties()
         {
-            return !(string.IsNullOrEmpty(_price.ToString()) | string.IsNullOrEmpty(_description) |
+            return !(string.IsNullOrEmpty(_price) | string.IsNullOrEmpty(_description) |
                 string.IsNullOrEmpty(_brand));
         }
     }

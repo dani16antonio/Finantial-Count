@@ -46,5 +46,10 @@ namespace Fcount.models
                 return conn.Delete(item);
             }
         }
+
+        public override string ToString()
+        {
+            return Description+", "+Brand+", B/"+ Price.ToString();
+        }
     }
 }

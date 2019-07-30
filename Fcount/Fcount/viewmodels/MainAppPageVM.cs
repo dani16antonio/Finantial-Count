@@ -14,6 +14,7 @@ namespace Fcount.viewmodels
         public NewCustomerCommand CustomerCommand { get; set; }
         public NewItemCommand ItemCommand { get; set; }
         public NewProviderCmd ProviderCommand { get; set; }
+        public NewQuoteCmd QuoteCommand { get; set; }
         public INavigationService navigationService;
 
 
@@ -22,6 +23,7 @@ namespace Fcount.viewmodels
             CustomerCommand = new NewCustomerCommand(this);
             ItemCommand = new NewItemCommand(this);
             ProviderCommand = new NewProviderCmd(this);
+            QuoteCommand = new NewQuoteCmd(this);
             this.navigationService = navigationService;
         }
     }

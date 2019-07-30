@@ -12,6 +12,7 @@
             Text="Agregar Cliente"
             Priority="0"
             Command="{Binding CustomerCommand}"/>
+        
         <ToolbarItem
             Order="Secondary"
             Text="Agregar Producto"
@@ -23,6 +24,12 @@
             Text="Agregar Proveedor"
             Priority="2"
             Command="{Binding ProviderCommand}"/>
+
+        <ToolbarItem
+            Order="Secondary"
+            Text="Cotizar"
+            Priority="3"
+            Command="{Binding QuoteCommand}"/>
     </TabbedPage.ToolbarItems>
     <local:CostumersTabbedPage Title="Cliente"/>
     <local:ItemsTabbedPage Title="Producto"/>

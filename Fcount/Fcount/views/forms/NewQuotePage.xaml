@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Fcount.views.forms.NewQuotePage">
+    <ContentPage.Content>
+        <StackLayout 
+            Margin="5,0,5,0"
+            VerticalOptions="StartAndExpand">
+            <Picker
+                Title="Cliente"
+                ItemsSource="{Binding Customers}"
+                Margin="0,50,0,0">
+            </Picker>
+
+            <StackLayout 
+                Orientation="Horizontal"
+                HorizontalOptions="FillAndExpand"
+                Margin="0,50,0,0">
+                
+                <Picker
+                Title="Producto"
+                ItemsSource="{Binding Items}">
+                </Picker>
+                
+                <Entry
+                Keyboard="Numeric"
+                Placeholder="Cantidad de productos"
+                Text="{Binding ItemsQuantity}"/>
+                
+            </StackLayout>
+
+            <Picker
+                Title="Proveedor"
+                ItemsSource="{Binding Providers}"
+                Margin="0,50,0,0">
+            </Picker>
+            <Button 
+                Text="Crear Cotización"
+                Command="{Binding CreateQuoteCommand}"
+                Margin="0,50,0,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

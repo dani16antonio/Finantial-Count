@@ -4,6 +4,7 @@ using Fcount.viewmodels.forms;
 using Fcount.viewmodels.forms.item;
 using Fcount.viewmodels.forms.provider;
 using Fcount.viewmodels.mainTabbedPages;
+using Fcount.viewmodels.utils.commands.forms;
 using Fcount.views;
 using Fcount.views.forms;
 using Fcount.views.forms.item;
@@ -47,6 +48,7 @@ namespace Fcount
             containerRegistry.RegisterForNavigation<NewProviderPage, NewProviderVM>();
             containerRegistry.RegisterForNavigation<ProvidersTabbedPage, ProvidersTabbedVM>();
             containerRegistry.RegisterForNavigation<UpdDelProviderPage, UpdDelProviderVM>();
+            containerRegistry.RegisterForNavigation<NewQuotePage, NewQuoteVM>();
         }
         
     }

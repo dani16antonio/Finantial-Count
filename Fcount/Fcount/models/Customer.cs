@@ -60,5 +60,9 @@ namespace Fcount.models
                 return rows;
             }
         }
+        public override string ToString()
+        {
+            return Lastname+", "+Name+" # "+Document;
+        }
     }
 }
