@@ -29,7 +29,7 @@ namespace Fcount.Droid
                 root = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
 
             //Create directory and file 
-            Java.IO.File myDir = new Java.IO.File(root + "/Syncfusion");
+            Java.IO.File myDir = new Java.IO.File(root + "/FinantialCount");
             myDir.Mkdir();
 
             Java.IO.File file = new Java.IO.File(myDir, fileName);

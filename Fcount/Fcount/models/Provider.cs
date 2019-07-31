@@ -51,5 +51,9 @@ namespace Fcount.models
                 return conn.Update(provider);
             }
         }
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

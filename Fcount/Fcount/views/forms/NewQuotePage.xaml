@@ -4,15 +4,18 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Fcount.views.forms.NewQuotePage">
+             x:Class="Fcount.views.forms.NewQuotePage"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms">
     <ContentPage.Content>
         <StackLayout 
             Margin="5,0,5,0"
             VerticalOptions="StartAndExpand">
             <Picker
+                x:Name="customerPicker"
                 Title="Cliente"
                 ItemsSource="{Binding Customers}"
-                Margin="0,50,0,0">
+                Margin="0,50,0,0"
+                SelectedItem="{Binding SelectedCustomer}">
             </Picker>
 
             <StackLayout 
@@ -22,7 +25,8 @@
                 
                 <Picker
                 Title="Producto"
-                ItemsSource="{Binding Items}">
+                ItemsSource="{Binding Items}"
+                SelectedItem="{Binding SelectedItem}">
                 </Picker>
                 
                 <Entry
@@ -35,7 +39,8 @@
             <Picker
                 Title="Proveedor"
                 ItemsSource="{Binding Providers}"
-                Margin="0,50,0,0">
+                Margin="0,50,0,0"
+                SelectedItem="{Binding SelectedProvider}">
             </Picker>
             <Button 
                 Text="Crear Cotización"

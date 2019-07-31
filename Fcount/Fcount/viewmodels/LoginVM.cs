@@ -17,7 +17,7 @@ namespace Fcount.viewmodels
     {
         INavigationService navigationService;
         public BtnLoginCommand loginBtnCommand { get; set; }
-        public string stRemenberIsToggled { get; set; }
+        //public string stRemenberIsToggled { get; set; }
         public BtnCreateUserCommand createUserCommand{ get; set; }
         private string _username, _pass;
 
